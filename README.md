@@ -17,4 +17,4 @@ Just here for fun (and of course free food).
 
 [AR Mini Games App](ArMiniGames)
 
-[Hand Tracking Peripherals](HandTrackingPeripherals)
+[Hand Tracking Peripherals](HandPeripherals)
