@@ -13,8 +13,8 @@ Just here for fun (and of course free food).
 [Arth]()
 
 ## Project Ideas
-[TheSoundProject]()
+[TheSoundProject](/TheSoundProject)
 
-[AR Mini Games App]()
+[AR Mini Games App](/ArMiniGames)
 
-[Hand Tracking Peripherals]()
+[Hand Tracking Peripherals](/HandTrackingPeripherals)
