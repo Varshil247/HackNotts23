@@ -8,7 +8,7 @@ import kivy
 
 kivy.require('1.0.8')
 
-Window.size = (350,580)
+Window.size = (900,580)
 
 class Graph(MDApp):
     def build(self):

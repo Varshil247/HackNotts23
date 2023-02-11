@@ -1,7 +1,7 @@
 MDScreen:
     name: "graph"
     GridLayout:
-        cols: 2
+        cols: 3
         rows: 2 
 
         GridLayout:
@@ -13,19 +13,48 @@ MDScreen:
 
             MDLabel:
                 text: '5'
+                halign: "right"
+                valign: "top"
             MDLabel:
                 text: '4'
+                halign: "right"
             MDLabel:
                 text: '3'
+                halign: "right"
             MDLabel:
                 text: '2'
+                halign: "right"
             MDLabel:
                 text: '1'
+                halign: "right"
+
+        GridLayout:
+            size_hint_x: 0.1
+            size_hint_y: 0.1
+
+            cols: 1
+            rows: 5
+
+            MDLabel:
+                text: ''
+            MDLabel:
+                text: ''
+            MDLabel:
+                text: ''
+            MDLabel:
+                text: ''
+            MDLabel:
+                text: ''
+
 
         MDLabel:
             size_hint_x: 0.9
             size_hint_y: 0.9
             md_bg_color: 30/255, 30/255, 30/255, 1
+
+        MDLabel:
+            size_hint_x: 0.1
+            size_hint_y: 0.1
 
         MDLabel:
             size_hint_x: 0.1
