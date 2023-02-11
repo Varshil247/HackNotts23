@@ -2,6 +2,7 @@ import cv2
 import mediapipe as mp
 import pyautogui
 import pygame.midi
+import numpy as np
 import time
 
 #############################################################################################    
@@ -24,6 +25,7 @@ def track():
         _, frame = cap.read()   
         frame = cv2.flip(frame, 1)
         frame_height, frame_width, _ = frame.shape
+        
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         rgb_frame = cv2.GaussianBlur(rgb_frame,(5,5),0)
         output = hand_detector.process(rgb_frame)
@@ -90,6 +92,15 @@ def playNote(note):
     print(note)
 
     #pygame.midi.init()
+<<<<<<< HEAD
+   # player = pygame.midi.Output(0)
+   ## player.set_instrument(0)
+   # player.note_on(note, 127)
+   # time.sleep(1)
+   # player.note_off(note, 127)
+   # del player
+   # pygame.midi.quit()
+=======
     #player = pygame.midi.Output(0)
     #player.set_instrument(0)
     #player.note_on(note, 127)
@@ -97,6 +108,7 @@ def playNote(note):
     #player.note_off(note, 127)
     #del player
     #pygame.midi.quit()
+>>>>>>> 3a7191ed9a09e1584b79f4cff61c3d3ab2edcf38
 
 #############################################################################################    
 
