@@ -92,7 +92,6 @@ def playNote(note):
     print(note)
 
     #pygame.midi.init()
-<<<<<<< HEAD
    # player = pygame.midi.Output(0)
    ## player.set_instrument(0)
    # player.note_on(note, 127)
@@ -100,15 +99,6 @@ def playNote(note):
    # player.note_off(note, 127)
    # del player
    # pygame.midi.quit()
-=======
-    #player = pygame.midi.Output(0)
-    #player.set_instrument(0)
-    #player.note_on(note, 127)
-    #time.sleep(1)
-    #player.note_off(note, 127)
-    #del player
-    #pygame.midi.quit()
->>>>>>> 3a7191ed9a09e1584b79f4cff61c3d3ab2edcf38
 
 #############################################################################################    
 
