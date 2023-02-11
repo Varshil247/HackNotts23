@@ -1,9 +1,8 @@
 import cv2
 import mediapipe as mp
 import pyautogui
-import pygame.midi
-import numpy as np
 import time
+import rtmidi
 
 #############################################################################################    
 
@@ -87,15 +86,31 @@ def soundNotes(row, col):
    
 def playNote(note):
     print(note)
+    
+    midiout = rtmidi.MidiOut()
+    available_ports = midiout.get_ports()
 
+    if available_ports:
+        midiout.open_port(0)
+    else:
+        midiout.open_virtual_port("My virtual output")
+
+    with midiout:
+        note_on = [0x90, note, 127] # channel 1, middle C, velocity 112
+        note_off = [0x80, note, 0]
+        midiout.send_message(note_on)
+        time.sleep(0.5)
+        midiout.send_message(note_off)
+
+    del midiout
     #pygame.midi.init()
-   # player = pygame.midi.Output(0)
-   ## player.set_instrument(0)
-   # player.note_on(note, 127)
-   # time.sleep(1)
-   # player.note_off(note, 127)
-   # del player
-   # pygame.midi.quit()
+    #player = pygame.midi.Output(0)
+    #player.set_instrument(0)
+    #player.note_on(note, 127)
+    #time.sleep(1)
+    #player.note_off(note, 127)
+    #del player
+    #pygame.midi.quit()
 
 #############################################################################################    
 
