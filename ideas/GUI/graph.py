@@ -7,7 +7,6 @@ from kivy.uix.floatlayout import FloatLayout
 import kivy
 
 kivy.require('1.0.8')
-
 Window.size = (900,580)
 
 class Graph(MDApp):

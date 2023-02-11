@@ -7,9 +7,7 @@ from kivy.core.window import Window
 from kivy.properties import ObjectProperty
 import kivy
 
-
 kivy.require('1.0.8')
-
 Window.size = (350,580)
 
 class LoginApp(MDApp):
