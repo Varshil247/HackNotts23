@@ -3,6 +3,7 @@ import mediapipe as mp
 import pyautogui
 import time
 import rtmidi
+#import pygame.midi
 
 #############################################################################################    
 
@@ -99,10 +100,11 @@ def playNote(note):
         note_on = [0x90, note, 127] # channel 1, middle C, velocity 112
         note_off = [0x80, note, 0]
         midiout.send_message(note_on)
-        time.sleep(0.5)
+        time.sleep(1/12)
         midiout.send_message(note_off)
 
     del midiout
+
     #pygame.midi.init()
     #player = pygame.midi.Output(0)
     #player.set_instrument(0)

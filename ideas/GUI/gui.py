@@ -14,7 +14,6 @@ class LoginApp(MDApp):
     def build(self):
      global Screen_Manager
      Screen_Manager = ScreenManager()
-     #Screen_Manager = ScreenManager(transition = NoTransition())
      Screen_Manager.add_widget(Builder.load_file("TheSoundProject.kv"))
      Screen_Manager.add_widget(Builder.load_file("TSPLogin.kv"))
      return Screen_Manager

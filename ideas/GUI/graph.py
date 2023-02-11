@@ -21,6 +21,7 @@ class Graph(MDApp):
 
     def graph(self, *args):
        Screen_Manager.current = "graph"
+       
 
 if __name__=='__main__':
     Graph().run()
