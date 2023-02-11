@@ -39,50 +39,21 @@ while True:
                 if id == 6:
                     index_xh = screen_width/frame_width*x
                     index_yh = screen_height/frame_height*y
-                    
-                if id == 9:
-                    midbo_x = screen_width/frame_width*x
-                    midbo_y = screen_height/frame_height*y
-                    
-                #thumb
-                if id == 4:
-                    cv2.circle(img=frame, center=(x,y), radius=10, color=(0, 255, 255))
-                    thumb_x = screen_width/frame_width*x
-                    thumb_y = screen_height/frame_height*y
+                
                  #mid   
-                if id == 10:
-                    mid_xh = screen_width/frame_width*x
-                    mid_yh = screen_height/frame_height*y
-                    
                 if id == 12:
                     cv2.circle(img=frame, center=(x,y), radius=10, color=(0, 255, 255))
-                    mid_x = screen_width/frame_width*x
-                    mid_y = screen_height/frame_height*y
+                    mid_x = (screen_width/frame_width*x)
+                    mid_y = (screen_height/frame_height*y)
                 
                    # print('outside', abs(index_y - mid_y))
                     if abs(index_y - index_yh) < 15:
                         pyautogui.click()
                         pyautogui.sleep(1)
                         
-                    if abs(mid_y - mid_yh) < 20:
-                        pyautogui.rightClick()
-                        pyautogui.sleep(1)
-                        
                     if  (abs(index_y - mid_y) < 100):
-                        pyautogui.moveTo(index_x, index_y)
+                        pyautogui.moveTo(mid_x, mid_y)
                         
-                    if (abs(index_y - mid_y) < 22):
-                        pyautogui.doubleClick()
-                        pyautogui.sleep(1)
-                        
-                    if (abs(thumb_y - index_yh) < 25):
-                        pyautogui.scroll(-120)
-                        pyautogui.sleep(1)
-                        
-                    if (abs(thumb_y - midbo_y) < 25): 
-                        pyautogui.scroll(120)
-                        pyautogui.sleep(1)
-                   
     
     cv2.imshow('Virtual Mouse', frame)
     cv2.waitKey(1)
