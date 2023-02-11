@@ -1,0 +1,26 @@
+<Button>
+    font_size: 12
+    size_hint: (0.3,0.3)
+
+<MyLayout>
+
+    FloatLayout:
+        size: root.width , root.height
+
+        Button:
+            text: "Top left "
+            size_hint: 0.2, 0.2
+
+
+
+
+        Image:
+            source: "assets/yaxis2.png"
+            size_hint: (1,0.7)
+            pos_hint:  {"center_x": .1, "center_y": .6}
+
+        Image: 
+            source: "assets/xaxis.png"
+            size_hint: (0.8,0.5)
+            pos_hint:  {"center_x": .5, "center_y": .255}
+        
