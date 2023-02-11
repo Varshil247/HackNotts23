@@ -4,6 +4,7 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 from kivy.uix.floatlayout import FloatLayout
 
+
 Builder.load_file('design.kv')
 #Builder.load_file('variableLablel.kv')
 
