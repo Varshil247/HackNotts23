@@ -4,8 +4,7 @@ from kivy.lang import Builder
 from kivy.clock import Clock
 from kivy.core.window import Window
 from kivy.uix.floatlayout import FloatLayout
-
-kivy.require('1.0.8')
+import kivy
 
 Window.size = (350,580)
 
