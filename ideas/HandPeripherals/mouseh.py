@@ -24,7 +24,7 @@ while True:
     hands = output.multi_hand_landmarks
     if hands:
         for hand in hands:
-            drawing_utils.draw_landmarks(frame, hand)
+            drawing_utils.draw_index(frame, hand)
             landmarks = hand.landmark
             for id, landmark in enumerate(landmarks):
                 #landmark coordinat 
@@ -57,3 +57,12 @@ while True:
     
     cv2.imshow('Virtual Mouse', frame)
     cv2.waitKey(1)
+
+def notes ():
+    
+   notes[11][4] = [ [84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95]
+                    [72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83]
+                    [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71]
+                    [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+                    [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
+                    ]
