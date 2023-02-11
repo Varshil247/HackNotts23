@@ -61,14 +61,14 @@ def soundGraph(screenx, screeny, x, y):
         screenYDim.append((screeny/5)*i)
 
     for i in range(len(screenXDim)):
-        if  x < ((screenx/12)*i):
+        if  x < (screenXDim[i]):
             break
 
     for j in range(len(screenYDim)):
-        if  y < ((screenx/5)*j):
+        if  y < (screenYDim[j]):
             break
     
-    soundNotes(5-j, i)
+    soundNotes(j, i)
 
 #############################################################################################   
  
