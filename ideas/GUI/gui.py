@@ -9,13 +9,15 @@ from kivymd.toast import toast
 from datetime import datetime
 from kivy import app
 import kivy
+<<<<<<< HEAD
 import configparser
 import mysql.connector
 from graph import Graph
 from kivymd.toast import toast
+=======
+>>>>>>> 8133ee53aa417644fcca2d9022c33cd5b0798f5d
 
 kivy.require('1.0.8')
-
 Window.size = (350,580)
 
 class LoginApp(MDApp):
