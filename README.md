@@ -10,7 +10,7 @@ Just here for fun (and of course free food and drinks).
 
 [Persia](https://github.com/PersiaF04)
 
-[Arth](https://github.com/Arth235)
+[Arth](https://github.com/Arth253)
 
 ## Project Ideas
 [TheSoundProject](TheSoundProject)
