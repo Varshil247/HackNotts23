@@ -1,26 +1,64 @@
-<Button>
-    font_size: 12
-    size_hint: (0.3,0.3)
+MDScreen:
+    name: "graph"
+    GridLayout:
+        cols: 2
+        rows: 2 
 
-<MyLayout>
+        GridLayout:
+            size_hint_x: 0.1
+            size_hint_y: 0.9
 
-    FloatLayout:
-        size: root.width , root.height
+            cols: 1
+            rows: 5
 
-        Button:
-            text: "Top left "
-            size_hint: 0.2, 0.2
+            MDLabel:
+                text: '5'
+            MDLabel:
+                text: '4'
+            MDLabel:
+                text: '3'
+            MDLabel:
+                text: '2'
+            MDLabel:
+                text: '1'
 
+        MDLabel:
+            size_hint_x: 0.9
+            size_hint_y: 0.9
+            md_bg_color: 30/255, 30/255, 30/255, 1
 
+        MDLabel:
+            size_hint_x: 0.1
+            size_hint_y: 0.1
 
+        GridLayout:
+            size_hint_x: 0.9
+            size_hint_y: 0.1
 
-        Image:
-            source: "assets/yaxis2.png"
-            size_hint: (1,0.7)
-            pos_hint:  {"center_x": .1, "center_y": .6}
+            cols: 12
+            rows: 1
 
-        Image: 
-            source: "assets/xaxis.png"
-            size_hint: (0.8,0.5)
-            pos_hint:  {"center_x": .5, "center_y": .255}
-        
+            MDLabel:
+                text: '1'
+            MDLabel:
+                text: '2'
+            MDLabel:
+                text: '3'
+            MDLabel:
+                text: '4'
+            MDLabel:
+                text: '5'
+            MDLabel:
+                text: '6'
+            MDLabel:
+                text: '7'
+            MDLabel:
+                text: '8'
+            MDLabel:
+                text: '9'
+            MDLabel:
+                text: '10'
+            MDLabel:
+                text: '11'
+            MDLabel:
+                text: '12'

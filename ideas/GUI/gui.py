@@ -28,10 +28,6 @@ class LoginApp(MDApp):
     def login(self, *args):
        Screen_Manager.current = "TSPLogin"
 
-
-
-
-
 if __name__=='__main__':
     LoginApp().run()
 
