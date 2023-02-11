@@ -15,17 +15,19 @@ def main():
 def track():
     pyautogui.FAILSAFE = False
     cap = cv2.VideoCapture(0)
+    cap.set(cv2.CAP_PROP_FPS, 12)
     hand_detector = mp.solutions.hands.Hands()
     drawing_utils = mp.solutions.drawing_utils
     screen_width, screen_height = pyautogui.size()
     index_x, index_y = 0, 0
-
+    
     while True:
         _, frame = cap.read()   
-        frame = cv2.flip(frame, 1) 
+        frame = cv2.flip(frame, 1)
         frame_height, frame_width, _ = frame.shape
         
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        rgb_frame = cv2.GaussianBlur(rgb_frame,(5,5),0)
         output = hand_detector.process(rgb_frame)
         hands = output.multi_hand_landmarks
 
@@ -38,7 +40,6 @@ def track():
                     y = int(landmark.y*frame_height)
 
                     if id == 8:
-                        drawing_utils.draw_landmarks(frame, hand)
                         cv2.circle(img=frame, center=(x,y), radius=10, color=(0, 255, 255))
                         index_x = screen_width/frame_width*x
                         index_y = screen_height/frame_height*y
@@ -91,6 +92,7 @@ def playNote(note):
     print(note)
 
     #pygame.midi.init()
+<<<<<<< HEAD
    # player = pygame.midi.Output(0)
    ## player.set_instrument(0)
    # player.note_on(note, 127)
@@ -98,6 +100,15 @@ def playNote(note):
    # player.note_off(note, 127)
    # del player
    # pygame.midi.quit()
+=======
+    #player = pygame.midi.Output(0)
+    #player.set_instrument(0)
+    #player.note_on(note, 127)
+    #time.sleep(1)
+    #player.note_off(note, 127)
+    #del player
+    #pygame.midi.quit()
+>>>>>>> 3a7191ed9a09e1584b79f4cff61c3d3ab2edcf38
 
 #############################################################################################    
 
