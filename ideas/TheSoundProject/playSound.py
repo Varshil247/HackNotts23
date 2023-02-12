@@ -54,7 +54,7 @@ if __name__ == "__main__":
 
     pyautogui.FAILSAFE = False
     velocity = 100
-    ins = input("ENTER INSTRUMENT NUMBER")
+    ins = input("ENTER INSTRUMENT NUMBER: ")
     if ins == True:
         instrum = ins
     else:
