@@ -52,8 +52,8 @@ def soundGraph(screenx, screeny, x, y,instrum,velocity):
 if __name__ == "__main__":
 
     pyautogui.FAILSAFE = False
-    instrum = 76
-    velocity = 127
+    instrum = 0
+    velocity = 100
     
     cap = cv2.VideoCapture(0)
     cap.set(cv2.CAP_PROP_FPS, 12)
@@ -74,6 +74,7 @@ if __name__ == "__main__":
 
         if hands:
             for hand in hands:
+               
                 landmarks = hand.landmark
                 for id, landmark in enumerate(landmarks):
 
