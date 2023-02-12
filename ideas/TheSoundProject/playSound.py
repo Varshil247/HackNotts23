@@ -90,7 +90,7 @@ if __name__ == "__main__":
                         
         cv2.imshow('Virtual Mouse', frame)
         cv2.waitKey(1)
-        
+       # p.join()
         
 
 
