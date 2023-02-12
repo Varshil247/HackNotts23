@@ -48,19 +48,10 @@ def soundGraph(screenx, screeny, x, y,instrum,velocity):
     
 
 #############################################################################################   
-def play_sound():
-    notes = [ 
-            [84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95],
-            [72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83],
-            [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71],
-            [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59],
-            [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47],
-            ]
+def play_sound(note):
+    pygame.midi.init()                       #not initializing(increased gaps)reduces sound gaps
+    player = pygame.midi.Output(0)
 
-    note = notes[row][col]
-    
-    print(note)
-    
     player.set_instrument(instrum)
     player.note_on(note, velocity)
     time.sleep(1)
