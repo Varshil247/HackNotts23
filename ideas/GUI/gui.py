@@ -5,7 +5,7 @@ from kivy.clock import Clock
 from kivy.core.window import Window
 import kivy
 from kivy.properties import ObjectProperty
-
+from TheSoundProject import play_sound as ps
 kivy.require('1.0.8')
 Window.maximize()
 
@@ -26,11 +26,11 @@ class SoundApp(MDApp):
 
    def graph(self, *args):
       Screen_Manager.current = "graph"
-      grid = ObjectProperty("grid")
-      print(grid)
    
-   def key_note():
-      print("hello")
+   def click(self, num):
+      print(num)
+      num = num
+      ps(num)
    
 if __name__=='__main__':
    SoundApp().run()
