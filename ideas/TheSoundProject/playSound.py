@@ -90,10 +90,11 @@ if __name__ == "__main__":
                         p.start()
                         
         cv2.imshow('Virtual Mouse', frame)
-        cv2.waitKey(1)
-      #  if pro == True: #uncomment for original 
-           # p.join()
-    
+       key = cv2.waitKey(1)
+        if key == 27:
+            break
+
+cv2.destroyAllWindows()
         
 
 
