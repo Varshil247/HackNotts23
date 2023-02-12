@@ -1,28 +1,29 @@
 MDScreen:
     name: "TSPLogin"
+    md_bg_color:  114/255, 228/255, 57/255, 1
+
     MDFloatLayout:
         id: login_layout
         md_bg_color:  114/255, 228/255, 57/255, 1
 
     Image:
         source: "Assets/edit2.png"
-        size_hint: .36, .36
-        pos_hint: {"center_x": .16, "center_y": .8}
-        
+        size_hint: .22, .22
+        pos_hint: {"center_x": .1, "center_y": .8}
+
     MDLabel:
         text: "TheSoundProject"
-        font_size: "32sp"
-        pos_hint: {"center_x": .785, "center_y": .849}
+        font_size: 33
+        pos_hint: {"center_x": .67, "center_y": .85}
 
     MDLabel:
         text: "Hacknotts '23"
-        font_size: "18sp"
-        color: 120/255, 120/255, 120/255, 1
-        pos_hint: {"center_x": .825, "center_y": .790}
+        font_size: 22
+        pos_hint: {"center_x": .67, "center_y": .8}
 
     MDTextField:
         id: input_username
-        hint_text: "Enter Username here.."
+        hint_text: "Username"
         helper_text: ""
         helper_text_mode: "persistent"
         pos_hint: {"center_x": .5, "center_y": .52}
@@ -31,7 +32,7 @@ MDScreen:
 
     MDTextField:
         id: input_password
-        hint_text: "Enter password here.."
+        hint_text: "Password"
         helper_text: ""
         helper_text_mode: "persistent"
         pos_hint: {"center_x": .5, "center_y": .42}
@@ -40,15 +41,15 @@ MDScreen:
         password: True
 
     MDTextButton:
-        text: "forgotten password?"
-        font_size: "9sp"
+        text: "Forgotten password?"
+        font_size: 11
         haling: "center"
         color: 120/255, 120/255, 120/255, 1
-        pos_hint: {"center_x": .715, "center_y": .370}
+        pos_hint: {"center_x": .5, "center_y": .36}
 
     MDFlatButton:
-        text: "Log-in"
-        size_hint: .79, .08
+        text: "Login"
+        size_hint: .8, .08
         pos_hint: {"center_x": .50, "center_y": .25}
         md_bg_color: 255/255, 255/255, 255/255, 1
         on_press: app.graph()

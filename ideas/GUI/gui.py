@@ -1,14 +1,9 @@
-from kivy.uix.screenmanager import ScreenManager,NoTransition, Screen
+from kivy.uix.screenmanager import ScreenManager
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.clock import Clock
 from kivy.core.window import Window
-from kivy.properties import ObjectProperty
-from kivymd.toast import toast
-from datetime import datetime
-from kivy import app
 import kivy
-import pyautogui
 
 kivy.require('1.0.8')
 Window.maximize()

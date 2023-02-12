@@ -53,6 +53,12 @@ def soundGraph(screenx, screeny, x, y,instrum,velocity):
 if __name__ == "__main__":
 
     pyautogui.FAILSAFE = False
+    velocity = 100
+    ins = input("ENTER INSTRUMENT NUMBER: ")
+    if ins == True:
+        instrum = ins
+    else:
+        instrum = 0
     
     
     cap = cv2.VideoCapture(0)
@@ -82,35 +88,19 @@ if __name__ == "__main__":
                     x = int(landmark.x*frame_width)
                     y = int(landmark.y*frame_height)
                     
-                    if x < frame_width/2:
-                        hand_type =0
-                    else:
-                        hand_type =1
                     
                     if id == 8:
-                        if hand_type == 0: # left hand
+                        
                             cv2.circle(img=frame, center=(x,y), radius=10, color=(0, 255, 255))
                             index_x = screen_width/frame_width*x
                             index_y = screen_height/frame_height*y 
-                            instrum = 43
-                            velocity =100
+                           
                             
                             p = multiprocessing.Process(target = soundGraph,args= (screen_width, screen_height, index_x, index_y,instrum,velocity))
                             p.daemon = True
                             pro = True
                             p.start()
-                            
-                        elif hand_type == 1: # right hand
-                            cv2.circle(img=frame, center=(x,y), radius=10, color=(255, 0, 0))
-                            index_x = screen_width/frame_width*x
-                            index_y = screen_height/frame_height*y 
-                            instrum = 0
-                            velocity = 100
-                            
-                            p = multiprocessing.Process(target = soundGraph,args= (screen_width, screen_height, index_x, index_y,instrum,velocity))
-                            p.daemon = True
-                            pro = True
-                            p.start()
+                       
 
         cv2.imshow('Virtual Mouse', frame)
         key = cv2.waitKey(1)
