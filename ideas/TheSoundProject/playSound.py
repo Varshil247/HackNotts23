@@ -45,7 +45,20 @@ def soundGraph(screenx, screeny, x, y,instrum,velocity):
     
     del player
     pygame.midi.quit()
- 
+    
+
+#############################################################################################   
+def play_sound(note):
+    pygame.midi.init()                       #not initializing(increased gaps)reduces sound gaps
+    player = pygame.midi.Output(0)
+
+    player.set_instrument(instrum)
+    player.note_on(note, velocity)
+    time.sleep(1)
+    player.note_off(note, velocity)
+    
+    del player
+    pygame.midi.quit()
 ########################################################################################################
 if __name__ == "__main__":
 
