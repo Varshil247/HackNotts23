@@ -31,6 +31,9 @@ class LoginApp(MDApp):
    def graph(self, *args):
       Screen_Manager.current = "graph"
    
+   def key_note():
+      print("hello")
+   
 if __name__=='__main__':
     LoginApp().run()
 
