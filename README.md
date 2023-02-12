@@ -14,7 +14,3 @@ Just here for fun (and of course free food and drinks).
 
 ## Project Ideas
 [TheSoundProject](TheSoundProject)
-
-[AR Mini Games App](ArMiniGames)
-
-[Hand Tracking Peripherals](HandPeripherals)
