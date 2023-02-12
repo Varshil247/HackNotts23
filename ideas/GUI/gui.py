@@ -29,6 +29,9 @@ class SoundApp(MDApp):
       grid = ObjectProperty("grid")
       print(grid)
    
+   def key_note():
+      print("hello")
+   
 if __name__=='__main__':
    SoundApp().run()
 
