@@ -91,8 +91,8 @@ if __name__ == "__main__":
                         
         cv2.imshow('Virtual Mouse', frame)
         cv2.waitKey(1)
-        if pro == True:
-            p.join()
+      #  if pro == True: #uncomment for original 
+           # p.join()
     
         
 
