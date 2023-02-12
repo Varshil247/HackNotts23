@@ -1,4 +1,3 @@
-
 from kivy.uix.screenmanager import ScreenManager,NoTransition, Screen
 from kivymd.app import MDApp
 from kivy.lang import Builder
@@ -9,9 +8,10 @@ from kivymd.toast import toast
 from datetime import datetime
 from kivy import app
 import kivy
+import pyautogui
 
 kivy.require('1.0.8')
-Window.size = (350,580)
+Window.maximize()
 
 class LoginApp(MDApp):
    def build(self):
