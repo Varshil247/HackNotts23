@@ -1,33 +1,26 @@
 MDScreen:
     name: "TheSoundProject"
-    MDFloatLayout:
-        md_bg_color: 30/255, 30/255, 30/255, 1
-    Image:
-        source: "Assets/edit.png"
-        size_hint: .50, .50
-        pos_hint: {"center_x":.5, "center_y": .56}
-        canvas.before:
-            Color:
-                rgb: 30/255,30/255,30/255,1
-            Ellipse:
-                size: 150,150
-                pos: 100, 250
+    md_bg_color: 30/255, 30/255, 30/255, 1
 
-    MDLabel:
-        text:"TheSoundProject"
-        pos_hint: {"center_x":.56, "center_y":.3}
-        haling: "center"
-        theme_text_color: "Custom"
-        text_color: 1/255,238/255, 72/255, 1
-        font_size: "38sp"
+    FloatLayout:
+        Image:
+            source: "Assets/edit.png"
+            md_bg_color: 30/255,30/255,30/255,1
+            pos_hint: {"center_x": .5, "center_y": .6}
+            size_hint: 0.5, 0.5
+
+        MDLabel:
+            text:"TheSoundProject"
+            theme_text_color: "Custom"
+            text_color: 1/255,238/255, 72/255, 1
+            pos_hint: {"center_x": .9, "center_y": .3}
+            font_size: 33
     
-    MDLabel:
-        text:"Hackathon '23"
-        pos_hint: {"center_x":.89, "center_y":.25}
-        haling: "center"
-        theme_text_color: "Custom"
-        text_color: 1/255,238/255, 72/255, 1
-        font_size: "13sp"
-
+        MDLabel:
+            text:"Hackathon '23"
+            theme_text_color: "Custom"
+            text_color:  1/255,238/255, 72/255, 1
+            pos_hint: {"center_x": .9, "center_y": .25}
+            font_size: 22
 
         
