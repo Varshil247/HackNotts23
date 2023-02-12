@@ -5,10 +5,10 @@ import pygame.midi
 import numpy as np
 import time
 import multiprocessing
-#import rtmidi
+
 
 ###################################################################################################
-def soundGraph(screenx, screeny, x, y):
+def soundGraph(screenx, screeny, x, y,instrum,velocity):
     
     pygame.midi.init()                       #not initializing(increased gaps)reduces sound gaps
     player = pygame.midi.Output(0)
@@ -38,10 +38,10 @@ def soundGraph(screenx, screeny, x, y):
     
     print(note)
     
-    player.set_instrument(0)
-    player.note_on(note, 100)
+    player.set_instrument(instrum)
+    player.note_on(note, velocity)
     time.sleep(1)
-    player.note_off(note, 100)
+    player.note_off(note, velocity)
     
     del player
     pygame.midi.quit()
@@ -52,6 +52,9 @@ def soundGraph(screenx, screeny, x, y):
 if __name__ == "__main__":
 
     pyautogui.FAILSAFE = False
+    instrum = 76
+    velocity = 127
+    
     cap = cv2.VideoCapture(0)
     cap.set(cv2.CAP_PROP_FPS, 12)
     hand_detector = mp.solutions.hands.Hands()
@@ -81,19 +84,18 @@ if __name__ == "__main__":
                         cv2.circle(img=frame, center=(x,y), radius=10, color=(0, 255, 255))
                         index_x = screen_width/frame_width*x
                         index_y = screen_height/frame_height*y   
-
-                        pyautogui.moveTo(index_x, index_y)
                         
-                        p = multiprocessing.Process(target = soundGraph,args= (screen_width, screen_height, index_x, index_y))
+                        p = multiprocessing.Process(target = soundGraph,args= (screen_width, screen_height, index_x, index_y,instrum,velocity))
                         p.daemon = True
                         pro = True
                         p.start()
                         
         cv2.imshow('Virtual Mouse', frame)
-        cv2.waitKey(1)
-      #  if pro == True: #uncomment for original 
-           # p.join()
-    
+        key = cv2.waitKey(1)
+        if key == 27:
+            break
+
+cv2.destroyAllWindows()
         
 
 

@@ -1,4 +1,3 @@
-
 from kivy.uix.screenmanager import ScreenManager,NoTransition, Screen
 from kivymd.app import MDApp
 from kivy.lang import Builder
@@ -9,12 +8,10 @@ from kivymd.toast import toast
 from datetime import datetime
 from kivy import app
 import kivy
-import configparser
-from graph import Graph
-from kivymd.toast import toast
+import pyautogui
 
 kivy.require('1.0.8')
-Window.size = (350,580)
+Window.maximize()
 
 class LoginApp(MDApp):
    def build(self):
@@ -32,14 +29,7 @@ class LoginApp(MDApp):
       Screen_Manager.current = "TSPLogin"
 
    def graph(self, *args):
-      App = app.get_running_app()
-      input_username=App.manager.get_screen('TSPLogin').ids['input_username'].text
-      input_password=App.manager.get_screen('TSPLogin').ids['input_password'].text
-
-      if  input_username == "a" and input_password == "a":
-            toast("check")
-            Screen_Manager.current = "graph"
-            Graph().run()
+      Screen_Manager.current = "graph"
    
 if __name__=='__main__':
     LoginApp().run()
