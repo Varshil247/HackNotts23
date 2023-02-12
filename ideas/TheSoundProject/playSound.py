@@ -90,7 +90,7 @@ if __name__ == "__main__":
                         p.start()
                         
         cv2.imshow('Virtual Mouse', frame)
-       key = cv2.waitKey(1)
+        key = cv2.waitKey(1)
         if key == 27:
             break
 
