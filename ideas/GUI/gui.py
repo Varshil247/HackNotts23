@@ -4,11 +4,12 @@ from kivy.lang import Builder
 from kivy.clock import Clock
 from kivy.core.window import Window
 import kivy
+from kivy.properties import ObjectProperty
 
 kivy.require('1.0.8')
 Window.maximize()
 
-class LoginApp(MDApp):
+class SoundApp(MDApp):
    def build(self):
       global Screen_Manager
       Screen_Manager = ScreenManager()
@@ -25,9 +26,11 @@ class LoginApp(MDApp):
 
    def graph(self, *args):
       Screen_Manager.current = "graph"
+      grid = ObjectProperty("grid")
+      print(grid)
    
 if __name__=='__main__':
-    LoginApp().run()
+   SoundApp().run()
 
 
 
