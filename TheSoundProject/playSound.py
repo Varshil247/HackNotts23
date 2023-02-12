@@ -5,16 +5,17 @@ import pygame.midi
 import numpy as np
 import time
 import multiprocessing
+#import rtmidi
 
 ###################################################################################################
-def soundGraph(screenx, screeny, x, y,instrum,velocity):
+def soundGraph(screenx, screeny, x, y):
     
     pygame.midi.init()                       #not initializing(increased gaps)reduces sound gaps
     player = pygame.midi.Output(0)
     
     screenXDim = []
     screenYDim = []
-    e = 0
+    e=0
     for col in range(12):
         screenXDim.append((screenx/12)*(col+1))
         for row in range(5):
@@ -22,7 +23,7 @@ def soundGraph(screenx, screeny, x, y,instrum,velocity):
             if  (x < (screenXDim[col]) and  y < (screenYDim[row])):
                 e = 1
                 break
-        if e == 1:        
+        if e ==1:        
             break
  
     notes = [ 
@@ -34,19 +35,9 @@ def soundGraph(screenx, screeny, x, y,instrum,velocity):
             ]
 
     note = notes[row][col]
-    player.set_instrument(instrum)
-    player.note_on(note, velocity)
-    time.sleep(1)
-    player.note_off(note, velocity)
     
-    del player
-    pygame.midi.quit()
+    print(note)
     
-#############################################################################################   
-def play_sound(note):
-    pygame.midi.init()                       #not initializing(increased gaps)reduces sound gaps
-    player = pygame.midi.Output(0)
-
     player.set_instrument(0)
     player.note_on(note, 100)
     time.sleep(1)
@@ -54,20 +45,15 @@ def play_sound(note):
     
     del player
     pygame.midi.quit()
+    
 
-########################################################################################################
+#############################################################################################    
+
 if __name__ == "__main__":
 
     pyautogui.FAILSAFE = False
-    velocity = 100
-    ins = input("ENTER INSTRUMENT NUMBER: ")
-    if ins == True:
-        instrum = ins
-    else:
-        instrum = 0
-    
     cap = cv2.VideoCapture(0)
-    cap.set(cv2.CAP_PROP_FPS, 12)
+    cap.set(cv2.CAP_PROP_FPS, 8)
     hand_detector = mp.solutions.hands.Hands()
     drawing_utils = mp.solutions.drawing_utils
     screen_width, screen_height = pyautogui.size()
@@ -86,25 +72,26 @@ if __name__ == "__main__":
         if hands:
             for hand in hands:
                 landmarks = hand.landmark
-               
                 for id, landmark in enumerate(landmarks):
+
                     x = int(landmark.x*frame_width)
                     y = int(landmark.y*frame_height)
 
                     if id == 8:
                         cv2.circle(img=frame, center=(x,y), radius=10, color=(0, 255, 255))
                         index_x = screen_width/frame_width*x
-                        index_y = screen_height/frame_height*y 
+                        index_y = screen_height/frame_height*y   
                         
-                        p = multiprocessing.Process(target = soundGraph,args= (screen_width, screen_height, index_x, index_y,instrum,velocity))
+                        pyautogui.moveTo(index_x, index_y)
+
+                        p = multiprocessing.Process(target = soundGraph,args= (screen_width, screen_height, index_x, index_y))
                         p.daemon = True
                         pro = True
                         p.start()
-
+                        
         cv2.imshow('Virtual Mouse', frame)
         key = cv2.waitKey(1)
-        if key == 27:
-            break
-
-cv2.destroyAllWindows()
         
+
+
+#############################################################################################    
