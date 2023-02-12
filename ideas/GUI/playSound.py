@@ -14,7 +14,7 @@ def soundGraph(screenx, screeny, x, y,instrum,velocity):
     
     screenXDim = []
     screenYDim = []
-    e=0
+    e = 0
     for col in range(12):
         screenXDim.append((screenx/12)*(col+1))
         for row in range(5):
@@ -22,7 +22,7 @@ def soundGraph(screenx, screeny, x, y,instrum,velocity):
             if  (x < (screenXDim[col]) and  y < (screenYDim[row])):
                 e = 1
                 break
-        if e ==1:        
+        if e == 1:        
             break
  
     notes = [ 
@@ -34,9 +34,6 @@ def soundGraph(screenx, screeny, x, y,instrum,velocity):
             ]
 
     note = notes[row][col]
-    
-    print(note)
-    
     player.set_instrument(instrum)
     player.note_on(note, velocity)
     time.sleep(1)
@@ -45,7 +42,6 @@ def soundGraph(screenx, screeny, x, y,instrum,velocity):
     del player
     pygame.midi.quit()
     
-
 #############################################################################################   
 def play_sound(note):
     pygame.midi.init()                       #not initializing(increased gaps)reduces sound gaps
@@ -58,6 +54,7 @@ def play_sound(note):
     
     del player
     pygame.midi.quit()
+
 ########################################################################################################
 if __name__ == "__main__":
 
@@ -68,7 +65,6 @@ if __name__ == "__main__":
         instrum = ins
     else:
         instrum = 0
-    
     
     cap = cv2.VideoCapture(0)
     cap.set(cv2.CAP_PROP_FPS, 12)
@@ -89,27 +85,21 @@ if __name__ == "__main__":
 
         if hands:
             for hand in hands:
-            
                 landmarks = hand.landmark
                
                 for id, landmark in enumerate(landmarks):
-
                     x = int(landmark.x*frame_width)
                     y = int(landmark.y*frame_height)
-                    
-                    
+
                     if id == 8:
+                        cv2.circle(img=frame, center=(x,y), radius=10, color=(0, 255, 255))
+                        index_x = screen_width/frame_width*x
+                        index_y = screen_height/frame_height*y 
                         
-                            cv2.circle(img=frame, center=(x,y), radius=10, color=(0, 255, 255))
-                            index_x = screen_width/frame_width*x
-                            index_y = screen_height/frame_height*y 
-                           
-                            
-                            p = multiprocessing.Process(target = soundGraph,args= (screen_width, screen_height, index_x, index_y,instrum,velocity))
-                            p.daemon = True
-                            pro = True
-                            p.start()
-                       
+                        p = multiprocessing.Process(target = soundGraph,args= (screen_width, screen_height, index_x, index_y,instrum,velocity))
+                        p.daemon = True
+                        pro = True
+                        p.start()
 
         cv2.imshow('Virtual Mouse', frame)
         key = cv2.waitKey(1)

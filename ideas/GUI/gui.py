@@ -6,6 +6,7 @@ from kivy.core.window import Window
 import kivy
 from kivy.properties import ObjectProperty
 from playSound import play_sound as ps
+
 kivy.require('1.0.8')
 Window.maximize()
 
