@@ -1,8 +1,9 @@
 import cv2
 import mediapipe as mp
 import pyautogui
+import pygame.midi
+import numpy as np
 import time
-import rtmidi
 
 #############################################################################################    
 
@@ -43,9 +44,8 @@ def track():
                         index_x = screen_width/frame_width*x
                         index_y = screen_height/frame_height*y
                             
-                        if (index_x and index_y):
-                            pyautogui.moveTo(index_x, index_y)
-                            soundGraph(screen_width, screen_height, index_x, index_y)
+                        pyautogui.moveTo(index_x, index_y)
+                        soundGraph(screen_width, screen_height, index_x, index_y)
 
         cv2.imshow('Virtual Mouse', frame)
         cv2.waitKey(1)
@@ -55,22 +55,17 @@ def track():
 def soundGraph(screenx, screeny, x, y):
     screenXDim = []
     screenYDim = []
-
+    e=0
     for col in range(12):
         screenXDim.append((screenx/12)*(col+1))
-        if  x < (screenXDim[col]):
+        for row in range(5):
+            screenYDim.append((screeny/5)*(row+1))
+            if  (x < (screenXDim[col]) and  y < (screenYDim[row])):
+                e = 1
+                break
+        if e ==1:        
             break
-
-    for row in range(5):
-        screenYDim.append((screeny/5)*(row+1))
-        if  y < (screenYDim[row]):
-            break
-    
-    soundNotes(row, col)
-
-#############################################################################################   
  
-def soundNotes(row, col):
     notes = [ 
             [84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95],
             [72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83],
@@ -84,33 +79,17 @@ def soundNotes(row, col):
 
 ############################################################################################# 
    
-def playNote(note):
+def playNote(note,):
     print(note)
-    
-    midiout = rtmidi.MidiOut()
-    available_ports = midiout.get_ports()
 
-    if available_ports:
-        midiout.open_port(0)
-    else:
-        midiout.open_virtual_port("My virtual output")
-
-    with midiout:
-        note_on = [0x90, note, 127] # channel 1, middle C, velocity 112
-        note_off = [0x80, note, 0]
-        midiout.send_message(note_on)
-        time.sleep(0.5)
-        midiout.send_message(note_off)
-
-    del midiout
-    #pygame.midi.init()
-    #player = pygame.midi.Output(0)
-    #player.set_instrument(0)
-    #player.note_on(note, 127)
-    #time.sleep(1)
-    #player.note_off(note, 127)
-    #del player
-    #pygame.midi.quit()
+    pygame.midi.init()
+    player = pygame.midi.Output(0)
+    player.set_instrument(0)
+    player.note_on(note, 127)
+    time.sleep(0.75)
+    player.note_off(note, 100)
+    del player
+    pygame.midi.quit()
 
 #############################################################################################    
 
