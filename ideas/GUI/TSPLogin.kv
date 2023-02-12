@@ -61,13 +61,7 @@ MDScreen:
         text: "Log-in"
         size_hint: .79, .08
         pos_hint: {"center_x": .50, "center_y": .25}
-        canvas.before:
-            Color:
-                rgb: 41/255, 135/255, 168/255, 1
-            RoundedRectangle: 
-                size: self.size
-                pos: self.pos
-                radius: [6]
-
+        md_bg_color: 0/255, 0/255, 0/255, 1
+        on_press: app.graph()
 
     

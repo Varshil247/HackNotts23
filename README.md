@@ -4,13 +4,13 @@ Hi! We are a group of 1st year Computer Science students at the University of No
 Just here for fun (and of course free food and drinks).
 
 ## Team Memebers
-[Prathu]()
+[Prathu](https://github.com/SeaM05)
 
-[Varshil]()
+[Varshil](https://github.com/Varshil247)
 
-[Persia]()
+[Persia](https://github.com/PersiaF04)
 
-[Arth]()
+[Arth](https://github.com/Arth253)
 
 ## Project Ideas
 [TheSoundProject](TheSoundProject)

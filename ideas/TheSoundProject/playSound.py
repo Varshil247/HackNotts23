@@ -4,6 +4,8 @@ import pyautogui
 import pygame.midi
 import numpy as np
 import time
+#import rtmidi
+
 
 #############################################################################################    
 
@@ -90,6 +92,20 @@ def playNote(note,):
     player.note_off(note, 100)
     del player
     pygame.midi.quit()
+   # if available_ports:
+   #     midiout.open_port(0)
+  #  else:
+   #     midiout.open_virtual_port("My virtual output")
+
+   # with midiout:
+      #  note_on = [0x90, note, 127] # channel 1, middle C, velocity 112
+     #   note_off = [0x80, note, 0]
+     #   midiout.send_message(note_on)
+      #  time.sleep(1/12)
+     #   midiout.send_message(note_off)
+
+   # del midiout
+
 
 #############################################################################################    
 
