@@ -3,17 +3,14 @@ MDScreen:
     GridLayout:
         cols: 3
         rows: 2 
-        #0,0
+
         GridLayout:
             size_hint_x: 0.05
-            size_hint_y: 0.9
+            size_hint_y: 0.05
 
             cols: 1
-            rows: 6
+            rows: 5
 
-            MDLabel:
-                text: '<P>'
-                halign: "right"
             MDLabel:
                 text: '5'
                 halign: "right"
@@ -21,7 +18,6 @@ MDScreen:
                 #size_hint: .36, .36
                 size_hint_x: 0.9
                 size_hint_y: 0.9
-                #pos_hint: 0.1 , 0.1
             MDLabel:
                 text: '4'
                 halign: "right"
@@ -37,7 +33,7 @@ MDScreen:
 
         GridLayout:
             size_hint_x: 0.05
-            size_hint_y: 0.9
+            size_hint_y: 0.05
 
             cols: 1
             rows: 5
@@ -54,24 +50,11 @@ MDScreen:
                 text: ''
 
         GridLayout:
-            size_hint_x: 0.1
-            size_hint_y: 0.1
-
+            name: "handgrid"
             cols: 12
             rows: 5
-            Button: 
-                text: ""
-                on_press: root.key_note()
-            Button: 
-                text: ""
-            Button: 
-                text: ""
-            Button: 
-                text: ""
-            Button: 
-                text: ""
-            Button: 
-                text: "" 
+
+            #for i in range(60): print("working")
             Button: 
                 text: ""
             Button: 
@@ -143,7 +126,7 @@ MDScreen:
             Button: 
                 text: ""
             Button: 
-                text: ""
+                text: "" 
             Button: 
                 text: ""
             Button: 
@@ -180,201 +163,96 @@ MDScreen:
                 text: ""
             Button: 
                 text: ""
+            Button: 
+                text: ""
+            Button: 
+                text: ""
+            Button: 
+                text: ""
+            Button: 
+                text: ""
+            Button: 
+                text: ""
+            Button: 
+                text: ""
+            
+           
 
 
-        #MDLabel:
-        #    size_hint_x: 0.9
-        #    size_hint_y: 0.9
+        #Image:
+        #    source: "asset/grid.webp"
+        #    size_hint: .36, .36
+        #    pos_hint: {"center_x": .16, "center_y": .8}
+
+        #Image:
+        #    source: "Assets/grid.webp"
+        #    size_hint: .36, .36
+        #    #size_hint_x: 0.9
+        #    #size_hint_y: 0.9
         #    md_bg_color: 30/255, 30/255, 30/255, 1
+            
 
         MDLabel:
-            size_hint_x: 0.0222
-            size_hint_y: 0.9
-
-        #0,2
-        MDLabel:
-            size_hint_x: 0.9
-            size_hint_y: 0.9
-            md_bg_color: 30/255, 30/255, 30/255, 1
-
-            GridLayout:
-                name: "grid"
-                cols: 12
-                rows: 5
-
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: "" 
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: "" 
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: "" 
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: "" 
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: "" 
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: "" 
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-                Button: 
-                    text: ""
-        #1,0
-        MDLabel:
-            size_hint_x: 0.0333
+            size_hint_x: 0.05
             size_hint_y: 0.1
 
-        #1,1
         MDLabel:
-            size_hint_x: 0.0222
+            size_hint_x: 0.05
             size_hint_y: 0.1
-#1,2
+
         GridLayout:
-            size_hint_x: 0.9
+            size_hint_x: 0.95
             size_hint_y: 0.1
 
-            cols: 13
+            cols: 24
             rows: 1
 
             MDLabel:
-                text: 'C'
-                halign: "left"
+                text: ''
             MDLabel:
-                text: 'C#'
-                halign: "left"
+                text: 'c'
             MDLabel:
-                text: 'D'
-                halign: "left"
+                text: ''
             MDLabel:
-                text: 'D#'
-                halign: "left"
+                text: 'c#'
             MDLabel:
-                text: 'E'
-                halign: "left"
+                text: ''
             MDLabel:
-                text: 'F'
-                halign: "left"
+                text: 'd'
             MDLabel:
-                text: 'F#'
-                halign: "left"
+                text: ''
             MDLabel:
-                text: 'G'
-                halign: "left"
+                text: 'd#'
             MDLabel:
-                text: 'G#'
-                halign: "left"
+                text: ''
             MDLabel:
-                text: 'A'
-                halign: "left"
+                text: 'e'
             MDLabel:
-                text: 'A#'
-                halign: "left"
+                text: ''
             MDLabel:
-                text: 'B'
-                halign: "left"
+                text: 'f'
             MDLabel:
-                text: '<N>'
-                halign: "left"
+                text: ''
+            MDLabel:
+                text: 'f#'
+            MDLabel:
+                text: ''
+            MDLabel:
+                text: 'g'
+            MDLabel:
+                text: ''
+            MDLabel:
+                text: 'g#'
+            MDLabel:
+                text: ''
+            MDLabel:
+                text: 'a'
+            MDLabel:
+                text: ''
+            MDLabel:
+                text: 'a#'
+            MDLabel:
+                text: ''
+            MDLabel:
+                text: 'b'
+            ##########
