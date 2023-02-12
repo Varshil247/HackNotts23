@@ -6,7 +6,7 @@ from kivy.core.window import Window
 from kivy.uix.floatlayout import FloatLayout
 import kivy
 
-Window.size = (350,580)
+Window.size = (900,580)
 
 class Graph(MDApp):
     def build(self):
