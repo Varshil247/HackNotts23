@@ -39,7 +39,7 @@ def soundGraph(screenx, screeny, x, y):
     print(note)
     
     player.set_instrument(0)
-    player.note_on(note, 127)
+    player.note_on(note, 100)
     time.sleep(1)
     player.note_off(note, 100)
     
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     drawing_utils = mp.solutions.drawing_utils
     screen_width, screen_height = pyautogui.size()
     index_x, index_y = 0, 0
-    
+    pro = False
     while True:
         _, frame = cap.read()   
         frame = cv2.flip(frame, 1)
@@ -86,11 +86,13 @@ if __name__ == "__main__":
                         
                         p = multiprocessing.Process(target = soundGraph,args= (screen_width, screen_height, index_x, index_y))
                         p.daemon = True
+                        pro = True
                         p.start()
                         
         cv2.imshow('Virtual Mouse', frame)
         cv2.waitKey(1)
-       # p.join()
+        #if pro == True:
+           # p.join()
         
 
 
