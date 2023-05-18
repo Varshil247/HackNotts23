@@ -15,6 +15,6 @@ Just here for fun (and of course free food and drinks).
 ## Project Idea
 [TheSoundProject](TheSoundProject)
 
-Genrating realtime midi music using openv hand tracking model. Refined and made efficient using multiprocessing & image-processing.
+* Genrating realtime midi music using openv hand tracking model. Refined and made efficient using multiprocessing & image-processing.
 
-Also included a training app, made with python kivy, to help people understand what areas of the grid play what notes.
+* Also included a training app, made with python kivy, to help people understand what areas of the grid play what notes.
